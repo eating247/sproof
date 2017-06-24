@@ -26,8 +26,6 @@ feature "User edits movie" do
 
   scenario "unsuccessfully" do
     fill_in "Title", with: ""
-    fill_in "Storyline", with: "bogus storyline"
-
     click_button "Submit"
 
     expect(page).to have_text("Update Movie")
