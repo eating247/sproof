@@ -1,5 +1,10 @@
 <div class="col-sm-offset-4 col-sm-4">
-  <h1><%= @movie.title %></h1>
+  <h3><%= @movie.title %></h3>
+  <p><%= @movie.storyline %></p>
+  <p><%= @movie.release %></p>
+  <p><%= @movie.genre.title %></p>
+  <p><a href="<%= @movie.link %>">IMDB</a></p>
+  <%= @movie.link %>
 
   <%= link_to "Edit movie", edit_movie_path(@movie) %>
   <%= link_to "Delete movie", movie_path(@movie), method: :delete %>

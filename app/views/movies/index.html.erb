@@ -1,7 +1,9 @@
-<button class="btn btn-default">
-  <%= link_to "Add movie", new_movie_path %>
-</button>
+<div class="col-sm-12">
+  <button class="btn btn-default btn-block btn-lg">
+    <%= link_to "add movie", new_movie_path %>
+  </button>
 
-<% @movies.each do |movie| %>
-  <%= render partial: "movie", locals: { movie: movie } %>
-<% end %>
+  <% @movies.each do |movie| %>
+    <%= render partial: "movie", locals: { movie: movie } %>
+  <% end %>
+</div>
