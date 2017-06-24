@@ -1,0 +1,19 @@
+<%= form_for movie do |m| %>
+  <%= m.label :title %>
+  <%= m.text_field :title %>
+
+  <%= m.label :storyline %>
+  <%= m.text_field :storyline %>
+
+  <%= m.label :release %>
+  <%= m.date_select(:release, :start_year => Date.current.year, :end_year => 1900 ) %>
+
+  <%= m.label :genre %>
+  <%= m.collection_select(:genre_id, Genre.all, :id, :title) %>
+
+  <%= m.label :link %>
+  <%= m.text_field :link %>
+
+  <%= m.submit "Submit" %>
+
+<% end %>
