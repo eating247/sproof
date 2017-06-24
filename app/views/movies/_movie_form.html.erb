@@ -1,19 +1,46 @@
-<%= form_for movie do |m| %>
-  <%= m.label :title %>
-  <%= m.text_field :title %>
+<div class="col-lg-6 form">
+  <%= form_for movie, :html => {:class => "form-horizontal"} do |m| %>
+    <fieldset>
+      <div class="form-group">
+        <%= m.label :title, class: 'col-lg-2 control-label' %>
+        <div class="col-lg-10">
+          <%= m.text_field :title, class: 'form-control' %>
+        </div>
+      </div>
 
-  <%= m.label :storyline %>
-  <%= m.text_field :storyline %>
 
-  <%= m.label :release %>
-  <%= m.date_select(:release, :start_year => Date.current.year, :end_year => 1900 ) %>
+      <div class="form-group">
+        <%= m.label :storyline, class: 'col-lg-2 control-label' %>
+        <div class="col-lg-10">
+          <%= m.text_field :storyline, class: 'form-control'  %>
+        </div>
+      </div>
 
-  <%= m.label :genre %>
-  <%= m.collection_select(:genre_id, Genre.all, :id, :title) %>
 
-  <%= m.label :link %>
-  <%= m.text_field :link %>
+      <div class="form-group">
+        <%= m.label :release, class: 'col-lg-2 control-label'%>
+        <div class="col-lg-3">
+          <%= m.date_select :release, { :start_year => Date.current.year, :end_year => 1900 }, { class: 'form-control'} %>
+        </div>
+      </div>
 
-  <%= m.submit "Submit" %>
 
-<% end %>
+      <div class="form-group">
+        <%= m.label :genre , class: 'col-lg-2 control-label'%>
+        <div class="col-lg-10">
+          <%= m.collection_select(:genre_id, Genre.all, :id, :title, {}, :class => 'form-control') %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= m.label :link, class: 'col-lg-2 control-label' %>
+        <div class="col-lg-10">
+          <%= m.text_field :link, class: 'form-control' %>
+        </div>
+      </div>
+
+      <%= m.submit "Submit", class: 'btn btn-default' %>
+
+    </fieldset>
+  <% end %>
+</div>
