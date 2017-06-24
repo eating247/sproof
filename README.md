@@ -2,6 +2,8 @@
 
 movies!
 
+[See it live.](https://sproof-ting.herokuapp.com/)
+
 ## Installation
 
 To run the app locally: 
