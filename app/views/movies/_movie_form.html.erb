@@ -1,4 +1,4 @@
-<div class="col-lg-6 form">
+<div class="form">
   <%= form_for movie, :html => {:class => "form-horizontal"} do |m| %>
     <fieldset>
       <div class="form-group">
@@ -39,8 +39,11 @@
         </div>
       </div>
 
-      <%= m.submit "Submit", class: 'btn btn-default' %>
-
+      <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+          <%= m.submit "Submit", class: 'btn btn-default' %>
+        </div>
+      </div>
     </fieldset>
   <% end %>
 </div>
