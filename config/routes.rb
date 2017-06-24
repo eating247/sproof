@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   root to: "movies#index"
 
-  resources :movies, only: [:index, :new, :create, :show, :edit, :update]
+  resources :movies
 end
