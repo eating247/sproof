@@ -1,5 +1,5 @@
-FactoryGirl.define do 
+FactoryGirl.define do
   factory :genre do
-    title "Romance"
+    title 'Romance'
   end
 end
