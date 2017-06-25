@@ -1,10 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    if params[:search].present?
-      @movies = Movie.search(params[:search])
-    else
-      @movies = Movie.all
-    end
+    @movies = Movie.all
   end
 
   def new
@@ -19,7 +15,7 @@ class MoviesController < ApplicationController
       render :new
     end
   end
-  
+
   def show
     @movie = Movie.find(params[:id])
   end
@@ -47,7 +43,7 @@ class MoviesController < ApplicationController
   end
 
   def search
-    @movies = Movie.search_name(params[:query])
+    @movies = Movie.search(params[:query])
   end
 
   private

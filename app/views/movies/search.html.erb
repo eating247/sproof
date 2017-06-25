@@ -1,0 +1,5 @@
+<h1><%= @movies.length %> Search Results</h1>
+
+<% @movies.each do |movie| %>
+    <%= render partial: "movie", locals: { movie: movie } %>
+<% end %>
