@@ -15,7 +15,7 @@ class MoviesController < ApplicationController
       render :new
     end
   end
-  
+
   def show
     @movie = Movie.find(params[:id])
   end
@@ -27,7 +27,7 @@ class MoviesController < ApplicationController
   def update
     @movie = Movie.find(params[:id])
     if @movie.update(movie_params)
-      redirect_to movies_path
+      redirect_to @movie
     else
       render :edit
     end
@@ -40,6 +40,10 @@ class MoviesController < ApplicationController
     else
       render :show
     end
+  end
+
+  def search
+    @movies = Movie.search(params[:query])
   end
 
   private

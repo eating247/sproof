@@ -10,27 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170623054635) do
-
+ActiveRecord::Schema.define(version: 20_170_623_054_635) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "genres", force: :cascade do |t|
-    t.string   "title",      null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'genres', force: :cascade do |t|
+    t.string   'title',      null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "movies", force: :cascade do |t|
-    t.string   "title",      null: false
-    t.string   "storyline"
-    t.date     "release"
-    t.string   "link"
-    t.integer  "genre_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["genre_id"], name: "index_movies_on_genre_id", using: :btree
+  create_table 'movies', force: :cascade do |t|
+    t.string   'title',      null: false
+    t.string   'storyline'
+    t.date     'release'
+    t.string   'link'
+    t.integer  'genre_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['genre_id'], name: 'index_movies_on_genre_id', using: :btree
   end
 
-  add_foreign_key "movies", "genres"
+  add_foreign_key 'movies', 'genres'
 end
