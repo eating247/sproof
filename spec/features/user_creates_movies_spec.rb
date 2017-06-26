@@ -15,7 +15,7 @@ feature 'User creates movie entries' do
     select '2017', from: 'movie_release_1i'
     select 'July', from: 'movie_release_2i'
     select '1', from: 'movie_release_3i'
-    select 'Romance', from: 'movie_genre_id'
+    check('Romance')
     fill_in 'Link', with: 'http://www.imdb.com/title/tt0092048/'
 
     click_button 'Submit'

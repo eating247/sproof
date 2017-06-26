@@ -16,8 +16,8 @@ feature 'User edits movie' do
     fill_in 'Storyline', with: 'some trippy ish'
     select '2014', from: 'movie_release_1i'
     select 'May', from: 'movie_release_2i'
+    check('Romance') 
     select '10', from: 'movie_release_3i'
-    select 'Romance', from: 'movie_genre_id'
     fill_in 'Link', with: 'http://www.imdb.com/title/tt1375666'
 
     click_button 'Submit'
