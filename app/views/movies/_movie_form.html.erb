@@ -28,7 +28,7 @@
       <div class="form-group">
         <%= m.label :genre , class: 'col-lg-2 control-label'%>
         <div class="col-lg-10">
-          <%= m.collection_select(:genre_id, Genre.all, :id, :title, {}, :class => 'form-control') %>
+          <%= m.collection_check_boxes(:genre_ids, Genre.all, :id, :title, {}, :class => 'form-control') %>
         </div>
       </div>
 

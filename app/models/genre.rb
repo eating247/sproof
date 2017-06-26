@@ -1,3 +1,4 @@
 class Genre < ApplicationRecord
-  has_many :movies
+  has_many :categorizations
+  has_many :movies, through: :categorizations
 end

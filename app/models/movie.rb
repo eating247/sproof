@@ -10,7 +10,9 @@ class Movie < ApplicationRecord
                       prefix: true
                     }
                   }
-  belongs_to :genre
+
+  has_many :categorizations
+  has_many :genres, through: :categorizations
 
   validates :title, presence: true
 end
