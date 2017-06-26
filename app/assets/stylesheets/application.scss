@@ -17,7 +17,11 @@ body {
   padding-top:0px
 }
 
-input {
+.alert {
+  margin-top:-22px
+}
+
+.btn:focus, input {
  outline:none;
 }
 

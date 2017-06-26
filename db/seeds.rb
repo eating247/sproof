@@ -6,3 +6,8 @@ GENRES = ['Romance', 'Action', 'Horror', 'Thriller', 'Animation', 'Documentary',
 GENRES.each do |genre|
   Genre.create(title: genre)
 end
+
+User.create(
+  email: "admin@istrator.com",
+  password: "password"
+)

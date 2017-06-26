@@ -2,8 +2,10 @@ require 'rails_helper'
 
 feature 'User edits movie' do
   let!(:movie) { FactoryGirl.create(:movie) }
+  let(:user){ FactoryGirl.create(:user) }
 
   before do
+    sign_in(user)
     visit movie_path(movie)
     click_link 'Edit movie'
     expect(current_path).to eq(edit_movie_path(movie))

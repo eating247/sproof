@@ -1,15 +1,15 @@
 require 'rails_helper'
 
 feature 'User creates movie entries' do
+  let(:user){ FactoryGirl.create(:user) }
+  let!(:genre){ FactoryGirl.create(:genre) } 
   before do
-    FactoryGirl.create(:genre)
-    visit root_path
+    sign_in(user)
     click_link 'Add movie'
-
-    expect(current_path).to eq(new_movie_path)
   end
 
   scenario 'successfully when all fields are filled in' do
+    expect(current_path).to eq(new_movie_path)
     fill_in 'Title', with: 'Tampopo'
     fill_in 'Storyline', with: 'Chashu with extra toppings'
     select '2017', from: 'movie_release_1i'
@@ -25,6 +25,7 @@ feature 'User creates movie entries' do
   end
 
   scenario 'unsuccessfully when no title is provided' do
+    expect(current_path).to eq(new_movie_path)
     fill_in 'Storyline', with: 'Chashu with extra toppings'
     select '2017', from: 'movie_release_1i'
     select 'July', from: 'movie_release_2i'

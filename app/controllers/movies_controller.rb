@@ -1,4 +1,6 @@
 class MoviesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :search, :show]
+
   def index
     @movies = Movie.all
   end
@@ -12,6 +14,7 @@ class MoviesController < ApplicationController
     if @movie.save
       redirect_to movies_path
     else
+      flash.now[:error] = @movie.errors.full_messages
       render :new
     end
   end
@@ -29,6 +32,7 @@ class MoviesController < ApplicationController
     if @movie.update(movie_params)
       redirect_to @movie
     else
+      flash.now[:error] = @movie.errors.full_messages
       render :edit
     end
   end
