@@ -1,7 +1,7 @@
 <div class="col-sm-offset-4 col-sm-4">
   <h3><%= @movie.title %></h3>
   <p><%= truncate(@movie.storyline, length: 200) %></p>
-  <p><%= @movie.release %></p>
+  <p><%= @movie.release.strftime("%b %d, %Y") %></p>
   <p><%= @movie.genre.title %></p>
   <p><a href="<%= @movie.link %>">IMDB</a></p>
 
