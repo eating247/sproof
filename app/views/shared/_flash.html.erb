@@ -1,6 +1,8 @@
 <% flash.each do |type, msg| %>
   <div class="alert alert-warning">
-    <b>Uh oh!</b> <%= msg %>
+    <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>
+    &nbsp;
+    <%= msg %>
   </div>
 <% end %>
 
