@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :search]
+  before_action :authenticate_user!, except: [:index, :search, :show]
 
   def index
     @movies = Movie.all
