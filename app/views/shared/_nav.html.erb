@@ -29,8 +29,7 @@
 
       <%= render "shared/search_form" %> 
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Log In", new_user_session_path %></li>
-        <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+        <li><%= manage_sessions %></li>
       </ul>
     </div>
   </div>
