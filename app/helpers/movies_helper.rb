@@ -1,9 +1,9 @@
 module MoviesHelper
   def display_release_date(release)
     if release
-      release.strftime("%b %d, %Y")
+      release.strftime('%b %d, %Y')
     else
-      "no date given"
+      'no date given'
     end
   end
 end
