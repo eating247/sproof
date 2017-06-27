@@ -17,3 +17,11 @@ To run the app locally:
 * Start up the server with `$ rails s` and visit `http://localhost:3000` in your browser.
 * To explore the app with a prepopulated login, log in with email
 `admin@istrator.com` and password `password`.
+
+---
+
+## Preview
+![index](https://github.com/eating247/sproof/blob/master/screenshots/sproof-index.png)
+![show](https://github.com/eating247/sproof/blob/master/screenshots/sproof-show.png)
+![search](https://github.com/eating247/sproof/blob/master/screenshots/sproof-search.png)
+![add](https://github.com/eating247/sproof/blob/master/screenshots/sproof-add.png)
