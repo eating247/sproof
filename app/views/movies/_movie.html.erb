@@ -5,7 +5,5 @@
   <p class="list-group-item-text">
   <%= truncate(movie.storyline, length: 140) %>
   </p>
-  <% movie.genres.each do |genre| %>
-    <span class="label label-default"><%= genre.title %></span>
-  <% end %>
+  <%= render partial: 'genre_tags', locals: { genres: movie.genres } %>
 <% end %>
