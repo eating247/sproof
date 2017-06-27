@@ -2,11 +2,12 @@
   <h3 class="text-center"><%= @movie.title %></h3>
   <dl>
     <dt>Release Date</dt>
-    <dd><%= @movie.release.strftime("%b %d, %Y") if @movie %></dd>
+    <dd><%= display_release_date(@movie.release) %></dd>
     <dt>Storyline</dt>
     <dd><%= @movie.storyline %></dd>
     <%= render partial: 'genre_tags', locals: { genres: @movie.genres } %>
   </dl>
+
   <div class="btn-group btn-group-justified">
     <a href="<%= @movie.link %>" class="btn btn-default btn-sm">IMDB</a>
     <%= link_to "Edit movie", edit_movie_path(@movie), class: "btn btn-default btn-sm" %>
