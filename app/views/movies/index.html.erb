@@ -1,7 +1,9 @@
 <div class="col-sm-offset-2 col-sm-8">
-  <%= link_to "Add movie", new_movie_path, class: "btn btn-default btn-block btn-lg" %>
+  <div class="list-group">
+    <% @movies.each do |movie| %>
+      <%= render partial: "movie", locals: { movie: movie } %>
+    <% end %>
+  </div>
 
-  <% @movies.each do |movie| %>
-    <%= render partial: "movie", locals: { movie: movie } %>
-  <% end %>
+  <%= link_to "Add movie", new_movie_path, class: "btn btn-success btn-block btn-lg" %>
 </div>
