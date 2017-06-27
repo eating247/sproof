@@ -3,6 +3,8 @@
 movies!
 
 [See it live.](https://sproof-ting.herokuapp.com/)
+To explore the app with a prepopulated login, log in with email
+`admin@istrator.com` and password `password`.
 
 ## Installation
 
@@ -15,8 +17,6 @@ To run the app locally:
   * `$ bundle exec rake db:migrate`
   * `$ bundle exec rake db:seed`
 * Start up the server with `$ rails s` and visit `http://localhost:3000` in your browser.
-* To explore the app with a prepopulated login, log in with email
-`admin@istrator.com` and password `password`.
 
 ---
 
