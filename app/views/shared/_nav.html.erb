@@ -7,12 +7,18 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "SPROOF", root_path, class: "navbar-brand" %>
+      <b>
+        <%= link_to root_path, class: "navbar-brand" do %>
+          SPROOF
+          <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
+        <% end %>
+        </b>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to "Index", root_path %></li>
+        <li><%= link_to "See All Movies", root_path %></li>
+        <li><%= link_to "Add Movie", new_movie_path %></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
