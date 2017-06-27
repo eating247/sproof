@@ -9,6 +9,6 @@ GENRES.each do |genre|
 end
 
 User.create(
-  email: "admin@istrator.com",
-  password: "password"
+  email: 'admin@istrator.com',
+  password: 'password'
 )

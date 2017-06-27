@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 feature 'User creates movie entries' do
-  let(:user){ FactoryGirl.create(:user) }
-  let!(:genre){ FactoryGirl.create(:genre) } 
+  let(:user) { FactoryGirl.create(:user) }
+  let!(:genre) { FactoryGirl.create(:genre) }
   before do
     sign_in(user)
     click_link 'Add movie'

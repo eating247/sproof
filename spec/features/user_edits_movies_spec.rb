@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'User edits movie' do
   let!(:movie) { FactoryGirl.create(:movie) }
-  let(:user){ FactoryGirl.create(:user) }
+  let(:user) { FactoryGirl.create(:user) }
 
   before do
     sign_in(user)
@@ -16,7 +16,7 @@ feature 'User edits movie' do
     fill_in 'Storyline', with: 'some trippy ish'
     select '2014', from: 'movie_release_1i'
     select 'May', from: 'movie_release_2i'
-    check('Romance') 
+    check('Romance')
     select '10', from: 'movie_release_3i'
     fill_in 'Link', with: 'http://www.imdb.com/title/tt1375666'
 
