@@ -23,5 +23,5 @@ To run the app locally:
 ## Preview
 ![index](https://github.com/eating247/sproof/blob/master/screenshots/sproof-index.png)
 ![show](https://github.com/eating247/sproof/blob/master/screenshots/sproof-show.png)
-![search](https://github.com/eating247/sproof/blob/master/screenshots/sproof-search.png)
 ![add](https://github.com/eating247/sproof/blob/master/screenshots/sproof-form.png)
+![search](https://github.com/eating247/sproof/blob/master/screenshots/sproof-search.png)
