@@ -3,6 +3,9 @@
     <%= movie.title %>
   </h5>
   <p class="list-group-item-text">
-  <%= movie.storyline %>
+  <%= truncate(movie.storyline, length: 140) %>
   </p>
+  <% movie.genres.each do |genre| %>
+    <span class="label label-default"><%= genre.title %></span>
+  <% end %>
 <% end %>
