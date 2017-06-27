@@ -28,7 +28,14 @@
       <div class="form-group">
         <%= m.label :genre , class: 'col-lg-2 control-label'%>
         <div class="col-lg-10">
-          <%= m.collection_check_boxes(:genre_ids, Genre.all, :id, :title, {}, :class => 'form-control') %>
+          <%= m.collection_check_boxes(:genre_ids, Genre.all, :id, :title) do |c| %>
+            <div class='form-check'>
+              <%= c.label class: 'form-check-label' do %>
+                <%= c.check_box class: 'form-check-input' %>
+                <%= c.text %>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       </div>
 
