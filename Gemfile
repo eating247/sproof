@@ -36,6 +36,7 @@ gem 'bootswatch-rails'
 gem 'pg_search'
 gem 'rubocop', require: false
 gem 'devise'
+gem 'addressable', :require => 'addressable/uri'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

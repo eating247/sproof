@@ -230,6 +230,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  addressable
   bootstrap-sass (~> 3.3.6)
   bootswatch-rails
   byebug
