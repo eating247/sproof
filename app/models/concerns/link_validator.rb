@@ -2,16 +2,14 @@ require 'addressable/uri'
 
 class LinkValidator < ActiveModel::Validator
   def validate(record)
-    begin
-      uri = parsed_uri(record.link) 
+    uri = parsed_uri(record.link)
 
-      if unaccepted_protocols(uri.scheme) ||
-          unaccepted_domains(uri.host)
-        raise Addressable::URI::InvalidURIError
-      end
-    rescue Addressable::URI::InvalidURIError
-      record.errors.add(:link, "must be a valid IMDB link")
+    if unaccepted_protocols(uri.scheme) ||
+       unaccepted_domains(uri.host)
+      fail Addressable::URI::InvalidURIError
     end
+  rescue Addressable::URI::InvalidURIError
+    record.errors.add(:link, 'must be a valid IMDB link')
   end
 
   private
@@ -21,11 +19,11 @@ class LinkValidator < ActiveModel::Validator
   end
 
   def unaccepted_protocols(scheme)
-    !["http", "https"].include?(scheme)
+    !%w(http https).include?(scheme)
   end
 
   def unaccepted_domains(host)
     # m.imdb.com for mobile
-    !["www.imdb.com", "m.imdb.com", "imdb.com"].include?(host)
+    !['www.imdb.com', 'm.imdb.com', 'imdb.com'].include?(host)
   end
 end
