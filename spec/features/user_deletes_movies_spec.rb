@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'User deletes movie' do
   let!(:movie) { FactoryGirl.create(:movie) }
-  let(:user){ FactoryGirl.create(:user) }
+  let(:user) { FactoryGirl.create(:user) }
 
   before do
     sign_in(user)

@@ -10,44 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170626023719) do
-
+ActiveRecord::Schema.define(version: 20_170_627_002_306) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "genres", force: :cascade do |t|
-    t.string   "title",      null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'categorizations', force: :cascade do |t|
+    t.integer  'movie_id',   null: false
+    t.integer  'genre_id',   null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index %w(genre_id movie_id), name: 'index_categorizations_on_genre_id_and_movie_id', unique: true, using: :btree
   end
 
-  create_table "movies", force: :cascade do |t|
-    t.string   "title",      null: false
-    t.string   "storyline"
-    t.date     "release"
-    t.string   "link"
-    t.integer  "genre_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["genre_id"], name: "index_movies_on_genre_id", using: :btree
+  create_table 'genres', force: :cascade do |t|
+    t.string   'title',      null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  create_table 'movies', force: :cascade do |t|
+    t.string   'title',      null: false
+    t.text     'storyline'
+    t.date     'release'
+    t.string   'link'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  add_foreign_key "movies", "genres"
+  create_table 'users', force: :cascade do |t|
+    t.string   'email',                  default: '', null: false
+    t.string   'encrypted_password',     default: '', null: false
+    t.string   'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.datetime 'remember_created_at'
+    t.integer  'sign_in_count', default: 0, null: false
+    t.datetime 'current_sign_in_at'
+    t.datetime 'last_sign_in_at'
+    t.inet     'current_sign_in_ip'
+    t.inet     'last_sign_in_ip'
+    t.datetime 'created_at',                          null: false
+    t.datetime 'updated_at',                          null: false
+    t.index ['email'], name: 'index_users_on_email', unique: true, using: :btree
+    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true, using: :btree
+  end
 end
