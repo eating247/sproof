@@ -2,6 +2,7 @@ require 'addressable/uri'
 
 class LinkValidator < ActiveModel::Validator
   def validate(record)
+    return if record.link.blank?
     uri = parsed_uri(record.link)
 
     if unaccepted_protocols(uri.scheme) ||
