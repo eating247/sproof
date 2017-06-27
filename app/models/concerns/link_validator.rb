@@ -10,7 +10,7 @@ class LinkValidator < ActiveModel::Validator
       fail Addressable::URI::InvalidURIError
     end
   rescue Addressable::URI::InvalidURIError
-    record.errors.add(:link, 'must be a valid IMDB link')
+    record.errors.add(:link, 'must be a valid IMDB link!')
   end
 
   private
