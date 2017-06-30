@@ -1,5 +1,5 @@
 <div class="col-sm-offset-2 col-sm-8">
-  <h3 class="text-left"><b><%= pluralize( @movies.length, 'Search Result') %></b></h3>
+  <h3 class="text-left"><b><%= display_search_message(@movies.length) %></b></h3>
 
   <% @movies.each do |movie| %>
     <%= render partial: "movie", locals: { movie: movie } %>
