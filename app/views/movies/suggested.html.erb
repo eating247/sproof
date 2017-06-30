@@ -1,9 +1,9 @@
 <div class="col-sm-offset-2 col-sm-8">
-  <h3 class="text-left"><b>Sorry, your search did not return any results.</b></h3>
-
+  <h3 class="text-left"><b>Sorry, your search didn't return any results.</b></h3>
   <hr>
-
-  <h4>Here are some movies you might find interesting instead:</h4>
+  <br>
+  <h5 class="text-center">Check out some of our latest movies instead!</h5>
+  <br>
   <% @suggested_movies.each do |movie| %>
     <%= render partial: "movie", locals: { movie: movie } %>
   <% end %>

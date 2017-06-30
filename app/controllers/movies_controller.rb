@@ -51,7 +51,7 @@ class MoviesController < ApplicationController
     if @movies.any?
       render :search
     else
-      @suggested_movies = SuggestedMovies.all
+      @suggested_movies = SuggestedMovie.all
       render :suggested
     end
   end

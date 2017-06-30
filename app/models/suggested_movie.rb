@@ -1,4 +1,4 @@
-class SuggestedMovies
+class SuggestedMovie
   def self.all
     Movie.order(created_at: :desc).limit(5)
   end
