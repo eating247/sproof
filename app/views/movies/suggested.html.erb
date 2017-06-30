@@ -4,7 +4,7 @@
   <hr>
 
   <h4>Here are some movies you might find interesting instead:</h4>
-  <% @movies.each do |movie| %>
+  <% @suggested_movies.each do |movie| %>
     <%= render partial: "movie", locals: { movie: movie } %>
   <% end %>
 </div>
