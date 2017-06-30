@@ -48,6 +48,12 @@ class MoviesController < ApplicationController
 
   def search
     @movies = Movie.search(params[:query])
+    if @movies.length > 0
+      render :search
+    else
+      @movies = Movie.order(created_at: :desc).limit(5)
+      render :suggested
+    end
   end
 
   private
