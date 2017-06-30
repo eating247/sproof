@@ -35,4 +35,19 @@ RSpec.describe MoviesController, type: :controller do
       end
     end
   end
+
+  describe '#search' do
+    it 'should render movies on search template' do
+      movie = FactoryGirl.create(:movie)
+      get :search, query: movie.title
+      expect(response).to render_template :search
+    end
+
+    context 'when search results are empty' do
+      it 'should render suggested template when search results are empty' do
+        get :search, query: 'something'
+        expect(response).to render_template :suggested
+      end
+    end
+  end
 end
